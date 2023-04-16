@@ -1,0 +1,199 @@
+﻿@import 'Common/variable.less';
+
+body {
+    .hero {
+        min-height: 50vh;
+        width: 100%;
+        background: url("/img/hero.webp") repeat;
+        background-position: left;
+        background-size: cover;
+        /*background: radial-gradient(var(--secondaryColor),var(--primaryColor));*/
+        position: relative;
+
+        &:after {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 100%;
+            inset: 0;
+            background-color: #00000073;
+            z-index: 1;
+        }
+
+        > article {
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            max-width: 600px;
+            width: 100%;
+            margin-inline: auto;
+
+            p {
+                font-size: 3rem;
+                color: var(--whiteColor);
+                text-align: center;
+            }
+        }
+    }
+
+    .category {
+        margin-block: 30px;
+
+        > article {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &-items {
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            align-items: center;
+            margin-top: 50px;
+            gap: 30px;
+            width: 100%;
+            justify-items: center;
+
+            .item {
+                position: relative;
+                width: 200px;
+                height: 200px;
+                border-radius: 5px;
+                box-shadow: 0 0 2px var(--greyColor);
+                background-color: var(--whiteColor);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 5px;
+                cursor: pointer;
+
+                > p {
+                    font-size: 1rem;
+                    color: var(--primaryColor);
+                    font-weight: bold;
+                    z-index: 2;
+                    transition: all var(--duration);
+                }
+
+                &:after {
+                    position: absolute;
+                    content: "";
+                    width: 100%;
+                    height: 0;
+                    left: 0;
+                    bottom: 0;
+                    z-index: 1;
+                    background: var(--primaryColor);
+                    transition: all var(--duration);
+                }
+
+                &:hover {
+                    > p {
+                        color: var(--whiteColor);
+                    }
+
+                    &::after {
+                        height: 80%;
+                    }
+                }
+            }
+        }
+    }
+
+    .slide {
+        margin-block: 50px;
+
+        > article {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            > a {
+                margin-left: auto;
+                position: relative;
+                font-size: .9rem;
+                color: var(--blackColor);
+                transition: all var(--duration);
+                font-weight: bold;
+
+                &:after {
+                    content: "➡";
+                    margin-left: 10px;
+                    transition: all var(--duration);
+                }
+
+                &:hover {
+                    color: var(--primaryColor);
+                }
+            }
+        }
+
+        &-title {
+            font-size: 1.2rem;
+
+            &:after {
+                width: 100%;
+            }
+        }
+
+        &-items {
+            display: flex;
+            gap: 10px;
+            overflow: hidden;
+            flex-wrap: nowrap;
+            padding: 5px;
+
+            .item {
+                position: relative;
+                width: 150px;
+                height: 150px;
+                border-radius: 5px;
+                box-shadow: 0 0 2px var(--greyColor);
+                background-color: var(--whiteColor);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 5px;
+                cursor: pointer;
+
+                > p {
+                    font-size: 1rem;
+                    color: var(--primaryColor);
+                    font-weight: bold;
+                    z-index: 2;
+                    transition: all var(--duration);
+                    text-align: center;
+                    overflow-wrap: anywhere;
+
+                }
+
+                &:after {
+                    position: absolute;
+                    content: "";
+                    width: 100%;
+                    height: 0;
+                    left: 0;
+                    bottom: 0;
+                    z-index: 1;
+                    background: var(--primaryColor);
+                    transition: all var(--duration);
+                }
+
+                &:hover {
+                    > p {
+                        color: var(--whiteColor);
+                    }
+
+                    &::after {
+                        height: 80%;
+                    }
+                }
+            }
+
+            &._wrap {
+                flex-wrap: wrap;
+            }
+        }
+    }
+}

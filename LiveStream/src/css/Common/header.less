@@ -1,0 +1,52 @@
+﻿@import url('https://cdn.amcapi.com/cloudweb/1.0.2/cloud-header.less');
+@import "variable.less";
+
+body {
+    .header {
+        background-color: var(--whiteColor);
+        box-shadow: 0 0 2px var(--greyColor);
+        z-index: 99999;
+
+        > div {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        &-logo {
+            padding: 5px;
+            display: flex;
+            align-items: center;
+
+            a {
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: var(--primaryColor);
+                text-transform: uppercase;
+                letter-spacing: 6px;
+                font-style: italic;
+                margin: 10px;
+            }
+        }
+
+        &-link {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 15px;
+            height: 100%;
+
+            > a {
+                height: 100%;
+                padding: 10px;
+                cursor: pointer;
+                color:var(--blackColor);
+                text-transform:uppercase;
+                transition:all var(--duration);
+                &:hover{
+                    color:var(--primaryColor);
+                }
+            }
+        }
+    }
+}

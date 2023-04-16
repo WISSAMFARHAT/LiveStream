@@ -1,0 +1,48 @@
+﻿@import "variable.less";
+
+
+img {
+    pointer-events: none;
+    width: 100%;
+}
+
+body {
+    header {
+        > div {
+            padding-inline: 20px;
+            max-width: var(--maxWidth);
+            margin-inline: auto;
+        }
+    }
+
+    main {
+        margin-top: var(--headerHeight);
+
+        section {
+
+            > article {
+                overflow: visible !important;
+            }
+        }
+    }
+
+    h1,h2{
+        position:relative;
+        width:fit-content;
+        margin:0;
+        padding-bottom:15px;
+        font-size:2rem;
+        color:var(--blackColor);
+        text-transform:uppercase;
+        &:after{
+            content:"";
+            position:absolute;
+            left:50%;
+            bottom:0;
+            transform:translateX(-50%);
+            width:50%;
+            height:4px;
+            background:var(--primaryColor);
+        }
+    }
+}

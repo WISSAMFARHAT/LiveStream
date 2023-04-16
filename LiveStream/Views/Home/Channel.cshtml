@@ -1,0 +1,40 @@
+﻿@using LiveStream.Model;
+@model StreamChannelModel;
+@{
+    Html.Bundle("css/channel.css");
+    Html.Bundle("https://vjs.zencdn.net/8.0.4/video-js.css");
+    Html.Bundle("https://vjs.zencdn.net/8.0.4/video.min.js");
+}
+
+
+<section class="channel">
+    <article>
+        <h1>@Model.Name.Replace("."," ")</h1>
+        <div class="channel-display">
+
+            <video id="my-video"
+                   class="video-js"
+                   controls
+                   preload="auto"
+                   data-setup="{}">
+                <source src="@Model.Url" type="application/x-mpegURL" />
+                <p class="vjs-no-js">
+                    To view this video please enable JavaScript, and consider upgrading to a web browser that
+                    <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                </p>
+                   </video>
+        
+            <div class="similar">
+                <p>More like this:</p>
+                <div class="similar-item">
+                    <a href="#">Channel 1</a>
+                    <a href="#">Channel 2</a>
+                    <a href="#">Channel 3</a>
+                    <a href="#">Channel 4</a>
+                    <a href="#">Channel 5</a>
+                    <a href="#">Channel 6</a>
+                </div>
+            </div>
+        </div>
+    </article>
+</section>

@@ -1,0 +1,310 @@
+:root {
+  -webkit-tap-highlight-color: transparent;
+  /* Consistent line spacing, which does not unnecessarily grow to accommodate things that would fit anyway */
+  /* From CSS Inline Layout Module Level 3: https://drafts.csswg.org/css-inline-3/#line-sizing-property */
+  line-sizing: normal;
+  /* Improve spacing of punctuation marks and at script changes in CJK languages */
+  /* From CSS Text Module Level 4: https://drafts.csswg.org/css-text-4/#text-spacing-property */
+  text-spacing: trim-start allow-end trim-adjacent ideograph-alpha ideograph-numeric;
+}
+body > header,
+body > footer {
+  user-select: none;
+}
+button,
+a {
+  user-select: none;
+}
+html {
+  height: 100%;
+}
+html,
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+html ._noscroll,
+body ._noscroll {
+  overflow: hidden;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+h1 {
+  font-size: 2rem;
+  margin: 0.67em 0;
+}
+h2 {
+  font-size: 1.5rem;
+}
+h3 {
+  font-size: 1.17rem;
+}
+h4 {
+  font-size: 1rem;
+}
+h5 {
+  font-size: 0.83rem;
+}
+h6 {
+  font-size: 0.67rem;
+}
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1;
+}
+pre {
+  white-space: pre-wrap;
+}
+hr {
+  border: 0.5px solid;
+}
+*:focus,
+*:active {
+  outline: none;
+}
+input,
+select,
+textarea,
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+}
+a,
+a:focus,
+a:active,
+a:visited,
+a:hover {
+  text-decoration: none;
+}
+img,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  /* Switch display mode to block, since that's what we usually want for images. */
+  vertical-align: middle;
+  /* If you override, and make an image inline, it's likely you'll want middle vertical alignment. */
+}
+img,
+video {
+  max-width: 100%;
+  /* Make images and video flexible by default. */
+  height: auto;
+  /* Ensure images and video maintain their aspect ratio when max-width comes into play. */
+}
+img {
+  display: inline-block;
+  max-width: 100%;
+}
+[disabled="disabled"] {
+  opacity: 0.4;
+  pointer-events: none;
+}
+textarea {
+  resize: none;
+}
+code,
+kbd,
+samp {
+  font-family: monospace;
+  font-size: 1rem;
+}
+.HorizontalScrolling {
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+section,
+aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+section article,
+aside article {
+  max-width: var(--maxWidth);
+  width: 100%;
+  overflow: hidden;
+}
+:root {
+  --primaryColor: #2e3191;
+  --primaryColorOpacity: #2e3191e6;
+  --secondaryColor: #42a7de;
+  --greyColor: #999FAE;
+  --redColor: #ed1c24;
+  --blackColor: #171717;
+  --whiteColor: #fff;
+  --primaryColorFaded: #42a7de4f;
+  --duration: 0.4s ease-in-out;
+  --headerHeight: 65px;
+  --headerbgColor: transparent;
+  --maxWidth: 1200px;
+}
+img {
+  pointer-events: none;
+  width: 100%;
+}
+body header > div {
+  padding-inline: 20px;
+  max-width: var(--maxWidth);
+  margin-inline: auto;
+}
+body main {
+  margin-top: var(--headerHeight);
+}
+body main section > article {
+  overflow: visible !important;
+}
+body h1,
+body h2 {
+  position: relative;
+  width: fit-content;
+  margin: 0;
+  padding-bottom: 15px;
+  font-size: 2rem;
+  color: var(--blackColor);
+  text-transform: uppercase;
+}
+body h1:after,
+body h2:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 4px;
+  background: var(--primaryColor);
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/lato/v23/S6u8w4BMUTPHh30wWw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/lato/v23/S6u9w4BMUTPHh7USew8.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/lato/v23/S6uyw4BMUTPHvxk.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/lato/v23/S6u9w4BMUTPHh6UVew8.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/lato/v23/S6u9w4BMUTPHh50Xew8.ttf) format('truetype');
+}
+* {
+  font-family: 'Lato', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  color: var(--blackColor);
+}
+.fade-left,
+.fade-right,
+.fadein {
+  opacity: 0;
+}
+.fade-left._appear,
+.fade-right._appear,
+.fadein._appear {
+  transform: none;
+  opacity: 1;
+  transition: opacity 800ms ease-in-out, transform 800ms ease-in-out;
+}
+.fade-left._appear:nth-child(2n+1),
+.fade-right._appear:nth-child(2n+1),
+.fadein._appear:nth-child(2n+1) {
+  transition-delay: 40ms;
+}
+.fade-left {
+  transform: translateX(-100%);
+}
+.fade-right {
+  transform: translateX(100%);
+}
+.fadein {
+  transform: translateY(50px);
+}
+header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  padding: 0;
+}
+body .header {
+  background-color: var(--whiteColor);
+  box-shadow: 0 0 2px var(--greyColor);
+  z-index: 99999;
+}
+body .header > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+body .header-logo {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+}
+body .header-logo a {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primaryColor);
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  font-style: italic;
+  margin: 10px;
+}
+body .header-link {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 15px;
+  height: 100%;
+}
+body .header-link > a {
+  height: 100%;
+  padding: 10px;
+  cursor: pointer;
+  color: var(--blackColor);
+  text-transform: uppercase;
+  transition: all var(--duration);
+}
+body .header-link > a:hover {
+  color: var(--primaryColor);
+}

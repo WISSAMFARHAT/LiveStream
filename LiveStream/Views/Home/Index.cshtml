@@ -1,0 +1,213 @@
+﻿@using LiveStream.Model;
+@model List<StreamChannelModel>;
+
+@{
+    Html.Bundle("css/index.css");
+}
+
+<section class="hero">
+    <article>
+        <p>Watch Your Favorite Channels Live</p>
+    </article>
+</section>
+
+<section class="category">
+    <article>
+        <h1 class="category-title">Category</h1>
+        <div class="category-items">
+            <a href="#" class="item">
+                <p>News Channel</p>
+            </a>
+            <a href="#" class="item">
+                <p>Series Channel</p>
+            </a>
+            <a href="#" class="item">
+                <p>Sport Channel</p>
+            </a>
+            <a href="#" class="item">
+                <p>Kids Channel</p>
+            </a>
+        </div>
+    </article>
+</section>
+
+<section class="slide">
+    <article>
+        <h2 class="slide-title">News Channel</h2>
+        <div class="slide-items">
+            <a href="news/AlJadeed.lb" class="item">
+                <p>Aljadeed Tv</p>
+            </a>
+            <a href="news/MTVLebanon.lb" class="item">
+                <p>MTV channel</p>
+            </a>
+            <a href="news/AlManar.lb" class="item">
+                <p>Manar TV</p>
+            </a>
+            <a href="news/LBC.sa" class="item">
+                <p>lbc tv</p>
+            </a>
+            <a href="#" class="item">
+                <p>Channel 5</p>
+            </a>
+            <a href="#" class="item">
+                <p>Channel 6</p>
+            </a>
+            <a href="#" class="item">
+                <p>Channel 7</p>
+            </a>
+            <a href="#" class="item">
+                <p>Channel 8</p>
+            </a>
+        </div>
+        <a href="#">View More</a>
+    </article>
+</section>
+
+<section class="slide">
+    <article>
+        <h2 class="slide-title">Series Channel</h2>
+        <div class="slide-items">
+            <a href="series/MBC1.ae" class="item">
+                <p>MBC1</p>
+            </a>
+            <a href="serie/RotanaCinemaEgypt.eg" class="item">
+                <p>RotanaCinemaEgypt</p>
+            </a>
+            <a href="#" class="item">
+                <p>Channel 3</p>
+            </a>
+            <a href="#" class="item">
+                <p>Channel 4</p>
+            </a>
+            <a href="#" class="item">
+                <p>Channel 5</p>
+            </a>
+            <a href="#" class="item">
+                <p>Channel 6</p>
+            </a>
+            <a href="#" class="item">
+                <p>Channel 7</p>
+            </a>
+            <a href="#" class="item">
+                <p>Channel 8</p>
+            </a>
+        </div>
+        <a href="#">View More</a>
+    </article>
+</section>
+
+<section class="slide">
+    <article>
+        <h2 class="slide-title">Sport Channel</h2>
+        <div class="slide-items">
+            <a href="#" class="item">
+                <p>Bein sport premuim 1</p>
+            </a>
+            <a href="#" class="item">
+                <p>Bein sport 1</p>
+            </a>
+            <a href="#" class="item">
+                <p>Channel 3</p>
+            </a>
+            <a href="#" class="item">
+                <p>Channel 4</p>
+            </a>
+            <a href="#" class="item">
+                <p>Channel 5</p>
+            </a>
+            <a href="#" class="item">
+                <p>Channel 6</p>
+            </a>
+            <a href="#" class="item">
+                <p>Channel 7</p>
+            </a>
+            <a href="#" class="item">
+                <p>Channel 8</p>
+            </a>
+        </div>
+        <a href="#">View More</a>
+    </article>
+</section>
+
+<section class="slide">
+    <article>
+        <h2 class="slide-title">Kids Channel</h2>
+        <div class="slide-items">
+            <a href="#" class="item">
+                <p>Channel 1</p>
+            </a>
+            <a href="#" class="item">
+                <p>Channel 2</p>
+            </a>
+            <a href="#" class="item">
+                <p>Channel 3</p>
+            </a>
+            <a href="#" class="item">
+                <p>Channel 4</p>
+            </a>
+            <a href="#" class="item">
+                <p>Channel 5</p>
+            </a>
+            <a href="#" class="item">
+                <p>Channel 6</p>
+            </a>
+            <a href="#" class="item">
+                <p>Channel 7</p>
+            </a>
+            <a href="#" class="item">
+                <p>Channel 8</p>
+            </a>
+        </div>
+        <a href="#">View More</a>
+    </article>
+</section>
+
+
+
+<section class="slide">
+    <article>
+        <h2 class="slide-title">All Channel LB</h2>
+        <div class="slide-items _wrap">
+            @foreach (StreamChannelModel channel in (Model.Where(x => x.Name.ToLower().Contains(".lb")).ToList()))
+            {
+                <a href="all/@channel.Name" class="item">
+                    <p>@channel.Name</p>
+                </a>
+            }
+        </div>
+        <a href="#">View More</a>
+    </article>
+</section>
+
+<section class="slide">
+    <article>
+        <h2 class="slide-title">All Channel AE</h2>
+        <div class="slide-items _wrap">
+            @foreach (StreamChannelModel channel in (Model.Where(x => x.Name.ToLower().Contains(".ae")).ToList()))
+            {
+                <a href="all/@channel.Name" class="item">
+                    <p>@channel.Name</p>
+                </a>
+            }
+        </div>
+        <a href="#">View More</a>
+    </article>
+</section>
+
+
+
+<section class="slide">
+    <article>
+        <h2 class="slide-title">All Channel UK</h2>
+        <div class="slide-items _wrap">
+            @foreach (StreamChannelModel channel in (Model.Where(x => x.Name.ToLower().Contains(".uk")).ToList()))
+            {
+                <a href="all/@channel.Name" class="item">
+                    <p>@channel.Name</p>
+                </a>
+            }
+        </div>
+        <a href="#">View More</a>
+    </article>
+</section>
